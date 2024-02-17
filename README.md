@@ -116,3 +116,7 @@ terraform plan
 terraform apply --auto-approve
 
 This will update terraform state file remotely in azure blob container.
+
+
+
+reference vedio:- https://www.youtube.com/watch?v=A1g8Yu3DZsk
