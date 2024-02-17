@@ -1,4 +1,4 @@
-# pHow to store Terraform state file in Azure Storage | How to manage Terraform state in Azure Blob Storage | Terraform Remote state in Azure Blob storage | Terraform backend
+# How to store Terraform state file in Azure Storage | How to manage Terraform state in Azure Blob Storage | Terraform Remote state in Azure Blob storage | Terraform backend
 
 One of the amazing features of Terraform is, it tracks the infrastructure that you provision. It does this through the means of state. By default, Terraform stores state information locally in a file named terraform.tfstate. This does not work well in a team environment where if any developer wants to make a change he needs to make sure nobody else is updating terraform in the same time. You need to use remote storage to store state file.
 
