@@ -1,0 +1,551 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2759
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fnil\fcharset0 HelveticaNeue-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf0 Last login: Sat Feb 17 10:33:15 on ttys000\
+harshareddy@Harshas-MacBook-Air ~ % az login\
+A web browser has been opened at https://login.microsoftonline.com/organizations/oauth2/v2.0/authorize. Please continue the login in the web browser. If no web browser is available or if the web browser fails to open, use device code flow with `az login --use-device-code`.\
+[\
+  \{\
+    "cloudName": "AzureCloud",\
+    "homeTenantId": \'93xxxxxxxx\'94,\
+    "id": \'93xxxxxxx\'94,\
+    "isDefault": true,\
+    "managedByTenants": [],\
+    "name": "Azure subscription 1",\
+    "state": "Enabled",\
+    "tenantId": \'93xxxxxxx\'94,\
+    "user": \{\
+      "name": \'93xxxxx\'94@gmail.com,\
+      "type": "user"\
+    \}\
+  \}\
+]\
+harshareddy@Harshas-MacBook-Air ~ % pwd\
+/Users/harshareddy\
+harshareddy@Harshas-MacBook-Air ~ % ls\
+AWSCLIV2.pkg				Movies\
+Applications				Music\
+Desktop					OneDrive - University Of Houston\
+Documents				Pictures\
+Downloads				Public\
+Library					get_helm.sh\
+harshareddy@Harshas-MacBook-Air ~ % cd desktop\
+harshareddy@Harshas-MacBook-Air desktop % mkdir azure-labs\
+harshareddy@Harshas-MacBook-Air desktop % cd azure-labs\
+harshareddy@Harshas-MacBook-Air azure-labs % vi main.tf\
+harshareddy@Harshas-MacBook-Air azure-labs % trraform init\
+zsh: command not found: trraform\
+harshareddy@Harshas-MacBook-Air azure-labs % terraform init\
+\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f1\b \cf0 Initializing the backend...
+\f0\b0 \
+\
+
+\f1\b Initializing provider plugins...
+\f0\b0 \
+- Finding hashicorp/azurerm versions matching "2.63.0"...\
+- Installing hashicorp/azurerm v2.63.0...\
+- Installed hashicorp/azurerm v2.63.0 (signed by HashiCorp)\
+\
+Terraform has created a lock file 
+\f1\b .terraform.lock.hcl
+\f0\b0  to record the provider\
+selections it made above. Include this file in your version control repository\
+so that Terraform can guarantee to make the same selections by default when\
+you run "terraform init" in the future.\
+\
+
+\f1\b Terraform has been successfully initialized!
+\f0\b0 \
+\
+You may now begin working with Terraform. Try running "terraform plan" to see\
+any changes that are required for your infrastructure. All Terraform commands\
+should now work.\
+\
+If you ever set or change modules or backend configuration for Terraform,\
+rerun this command to reinitialize your working directory. If you forget, other\
+commands will detect it and remind you to do so if necessary.\
+harshareddy@Harshas-MacBook-Air azure-labs % terraform plan\
+\
+
+\f1\b Planning failed. Terraform encountered an error while generating this plan.
+\f0\b0 \
+\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f2 \cf0 \uc0\u9591 
+\f0 \
+\uc0\u9474  
+\f1\b Error: Error ensuring Resource Providers are registered.
+\f0\b0 \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f1\b \cf0 \uc0\u9474 
+\f0\b0  \
+\uc0\u9474  Terraform automatically attempts to register the Resource Providers it supports to\
+\uc0\u9474  ensure it's able to provision resources.\
+\uc0\u9474  \
+\uc0\u9474  If you don't have permission to register Resource Providers you may wish to use the\
+\uc0\u9474  "skip_provider_registration" flag in the Provider block to disable this functionality.\
+\uc0\u9474  \
+\uc0\u9474  Please note that if you opt out of Resource Provider Registration and Terraform tries\
+\uc0\u9474  to provision a resource from a Resource Provider which is unregistered, then the errors\
+\uc0\u9474  may appear misleading - for example:\
+\uc0\u9474  \
+\uc0\u9474  > API version 2019-XX-XX was not found for Microsoft.Foo\
+\uc0\u9474  \
+\uc0\u9474  Could indicate either that the Resource Provider "Microsoft.Foo" requires registration,\
+\uc0\u9474  but this could also indicate that this Azure Region doesn't support this API version.\
+\uc0\u9474  \
+\uc0\u9474  More information on the "skip_provider_registration" flag can be found here:\
+\uc0\u9474  https://www.terraform.io/docs/providers/azurerm/index.html#skip_provider_registration\
+\uc0\u9474  \
+\uc0\u9474  Original Error: Cannnot register providers: Microsoft.Relay, Microsoft.EventGrid, Microsoft.AppPlatform, Microsoft.Cdn, Microsoft.DBforMySQL. Errors were: Cannot register provider Microsoft.Relay with Azure Resource Manager: resources.ProvidersClient#Register: Failure sending request: StatusCode=409 -- Original Error: autorest/azure: Service returned an error. Status=<nil> Code="ReadOnlyDisabledSubscription" Message="The subscription 'e3ccdf2e-37c7-458b-883d-4963f78832c8' is disabled and therefore marked as read only. You cannot perform any write actions on this subscription until it is re-enabled.".\
+\uc0\u9474  Cannot register provider Microsoft.EventGrid with Azure Resource Manager: resources.ProvidersClient#Register: Failure sending request: StatusCode=409 -- Original Error: autorest/azure: Service returned an error. Status=<nil> Code="ReadOnlyDisabledSubscription" Message="The subscription 'e3ccdf2e-37c7-458b-883d-4963f78832c8' is disabled and therefore marked as read only. You cannot perform any write actions on this subscription until it is re-enabled.".\
+\uc0\u9474  Cannot register provider Microsoft.AppPlatform with Azure Resource Manager: resources.ProvidersClient#Register: Failure sending request: StatusCode=409 -- Original Error: autorest/azure: Service returned an error. Status=<nil> Code="ReadOnlyDisabledSubscription" Message="The subscription 'e3ccdf2e-37c7-458b-883d-4963f78832c8' is disabled and therefore marked as read only. You cannot perform any write actions on this subscription until it is re-enabled.".\
+\uc0\u9474  Cannot register provider Microsoft.Cdn with Azure Resource Manager: resources.ProvidersClient#Register: Failure sending request: StatusCode=409 -- Original Error: autorest/azure: Service returned an error. Status=<nil> Code="ReadOnlyDisabledSubscription" Message="The subscription 'e3ccdf2e-37c7-458b-883d-4963f78832c8' is disabled and therefore marked as read only. You cannot perform any write actions on this subscription until it is re-enabled.".\
+\uc0\u9474  Cannot register provider Microsoft.DBforMySQL with Azure Resource Manager: resources.ProvidersClient#Register: Failure sending request: StatusCode=409 -- Original Error: autorest/azure: Service returned an error. Status=<nil> Code="ReadOnlyDisabledSubscription" Message="The subscription 'e3ccdf2e-37c7-458b-883d-4963f78832c8' is disabled and therefore marked as read only. You cannot perform any write actions on this subscription until it is re-enabled.".\
+\uc0\u9474  \
+\uc0\u9474    with provider["registry.terraform.io/hashicorp/azurerm"],\
+\uc0\u9474    on main.tf line 10, in provider "azurerm":\
+\uc0\u9474    10: provider "azurerm" \ul \{\ulnone \
+\uc0\u9474  \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f2 \cf0 \uc0\u9589 
+\f0 \
+harshareddy@Harshas-MacBook-Air azure-labs % ls -al\
+total 16\
+drwxr-xr-x   5 harshareddy  staff   160 Feb 17 10:44 .\
+drwx------@ 17 harshareddy  staff   544 Feb 17 10:44 ..\
+drwxr-xr-x   3 harshareddy  staff    96 Feb 17 10:44 .terraform\
+-rw-r--r--   1 harshareddy  staff  1110 Feb 17 10:43 .terraform.lock.hcl\
+-rw-r--r--   1 harshareddy  staff   270 Feb 17 10:42 main.tf\
+harshareddy@Harshas-MacBook-Air azure-labs % terraform plan\
+\
+Terraform used the selected providers to generate the following execution plan. Resource\
+actions are indicated with the following symbols:\
+  + create\
+\
+Terraform will perform the following actions:\
+\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f1\b \cf0   # azurerm_resource_group.demo-rg
+\f0\b0  will be created\
+  + resource "azurerm_resource_group" "demo-rg" \{\
+      + id       = (known after apply)\
+      + location = "eastus"\
+      + name     = "demo-resource-group"\
+    \}\
+\
+
+\f1\b Plan:
+\f0\b0  1 to add, 0 to change, 0 to destroy.\
+\
+\uc0\u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \
+\
+Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to\
+take exactly these actions if you run "terraform apply" now.\
+harshareddy@Harshas-MacBook-Air azure-labs % terraform apply --auto-approve\
+\
+Terraform used the selected providers to generate the following execution plan. Resource\
+actions are indicated with the following symbols:\
+  + create\
+\
+Terraform will perform the following actions:\
+\
+
+\f1\b   # azurerm_resource_group.demo-rg
+\f0\b0  will be created\
+  + resource "azurerm_resource_group" "demo-rg" \{\
+      + id       = (known after apply)\
+      + location = "eastus"\
+      + name     = "demo-resource-group"\
+    \}\
+\
+
+\f1\b Plan:
+\f0\b0  1 to add, 0 to change, 0 to destroy.\
+
+\f1\b azurerm_resource_group.demo-rg: Creating...
+\f0\b0 \
+
+\f1\b azurerm_resource_group.demo-rg: Creation complete after 1s [id=/subscriptions/e3ccdf2e-37c7-458b-883d-4963f78832c8/resourceGroups/demo-resource-group]
+\f0\b0 \
+\
+
+\f1\b Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+\f0\b0 \
+harshareddy@Harshas-MacBook-Air azure-labs % ls -al                        \
+total 24\
+drwxr-xr-x   6 harshareddy  staff   192 Feb 17 10:51 .\
+drwx------@ 17 harshareddy  staff   544 Feb 17 10:51 ..\
+drwxr-xr-x   3 harshareddy  staff    96 Feb 17 10:44 .terraform\
+-rw-r--r--   1 harshareddy  staff  1110 Feb 17 10:43 .terraform.lock.hcl\
+-rw-r--r--   1 harshareddy  staff   270 Feb 17 10:42 main.tf\
+-rw-r--r--   1 harshareddy  staff   957 Feb 17 10:51 terraform.tfstate\
+harshareddy@Harshas-MacBook-Air azure-labs % cat terraform.tfstate\
+\{\
+  "version": 4,\
+  "terraform_version": "1.5.7",\
+  "serial": 1,\
+  "lineage": "ed9a0aab-52b5-8bad-a4c2-71b91f38014a",\
+  "outputs": \{\},\
+  "resources": [\
+    \{\
+      "mode": "managed",\
+      "type": "azurerm_resource_group",\
+      "name": "demo-rg",\
+      "provider": "provider[\\"registry.terraform.io/hashicorp/azurerm\\"]",\
+      "instances": [\
+        \{\
+          "schema_version": 0,\
+          "attributes": \{\
+            "id": "/subscriptions/xxxxxxx\'94,\
+            "location": "eastus",\
+            "name": "demo-resource-group",\
+            "tags": null,\
+            "timeouts": null\
+          \},\
+          "sensitive_attributes": [],\
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo1NDAwMDAwMDAwMDAwLCJkZWxldGUiOjU0MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjo1NDAwMDAwMDAwMDAwfX0="\
+        \}\
+      ]\
+    \}\
+  ],\
+  "check_results": null\
+\}\
+harshareddy@Harshas-MacBook-Air azure-labs % sudo vi create-storage.sh\
+Password:\
+harshareddy@Harshas-MacBook-Air azure-labs % cat create-storage.sh\
+#!/bin/bash\
+RESOURCE_GROUP_NAME=tfstate\
+STORAGE_ACCOUNT_NAME=tfstate$RANDOM\
+CONTAINER_NAME=tfstate\
+# Create resource group\
+az group create --name $RESOURCE_GROUP_NAME --location eastus\
+# Create storage account\
+az storage account create --resource-group $RESOURCE_GROUP_NAME --name $STORAGE_ACCOUNT_NAME --sku Standard_LRS --encryption-services blob\
+# Create blob container\
+az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOUNT_NAME\
+harshareddy@Harshas-MacBook-Air azure-labs % sh create-storage.sh\
+\{\
+  "id": "/subscriptions/xxxxx/tfstate",\
+  "location": "eastus",\
+  "managedBy": null,\
+  "name": "tfstate",\
+  "properties": \{\
+    "provisioningState": "Succeeded"\
+  \},\
+  "tags": null,\
+  "type": "Microsoft.Resources/resourceGroups"\
+\}\
+\{\
+  "accessTier": "Hot",\
+  "accountMigrationInProgress": null,\
+  "allowBlobPublicAccess": false,\
+  "allowCrossTenantReplication": false,\
+  "allowSharedKeyAccess": null,\
+  "allowedCopyScope": null,\
+  "azureFilesIdentityBasedAuthentication": null,\
+  "blobRestoreStatus": null,\
+  "creationTime": "2024-02-17T16:57:25.123224+00:00",\
+  "customDomain": null,\
+  "defaultToOAuthAuthentication": null,\
+  "dnsEndpointType": null,\
+  "enableHttpsTrafficOnly": true,\
+  "enableNfsV3": null,\
+  "encryption": \{\
+    "encryptionIdentity": null,\
+    "keySource": "Microsoft.Storage",\
+    "keyVaultProperties": null,\
+    "requireInfrastructureEncryption": null,\
+    "services": \{\
+      "blob": \{\
+        "enabled": true,\
+        "keyType": "Account",\
+        "lastEnabledTime": "2024-02-17T16:57:25.435689+00:00"\
+      \},\
+      "file": \{\
+        "enabled": true,\
+        "keyType": "Account",\
+        "lastEnabledTime": "2024-02-17T16:57:25.435689+00:00"\
+      \},\
+      "queue": null,\
+      "table": null\
+    \}\
+  \},\
+  "extendedLocation": null,\
+  "failoverInProgress": null,\
+  "geoReplicationStats": null,\
+  "id": "/subscriptions/xxxxxx/resourceGroups/tfstate/providers/Microsoft.Storage/storageAccounts/tfstate20797",\
+  "identity": null,\
+  "immutableStorageWithVersioning": null,\
+  "isHnsEnabled": null,\
+  "isLocalUserEnabled": null,\
+  "isSftpEnabled": null,\
+  "isSkuConversionBlocked": null,\
+  "keyCreationTime": \{\
+    "key1": "2024-02-17T16:57:25.279438+00:00",\
+    "key2": "2024-02-17T16:57:25.279438+00:00"\
+  \},\
+  "keyPolicy": null,\
+  "kind": "StorageV2",\
+  "largeFileSharesState": null,\
+  "lastGeoFailoverTime": null,\
+  "location": "eastus",\
+  "minimumTlsVersion": "TLS1_0",\
+  "name": "tfstate20797",\
+  "networkRuleSet": \{\
+    "bypass": "AzureServices",\
+    "defaultAction": "Allow",\
+    "ipRules": [],\
+    "ipv6Rules": [],\
+    "resourceAccessRules": null,\
+    "virtualNetworkRules": []\
+  \},\
+  "primaryEndpoints": \{\
+    "blob": "https://tfstate20797.blob.core.windows.net/",\
+    "dfs": "https://tfstate20797.dfs.core.windows.net/",\
+    "file": "https://tfstate20797.file.core.windows.net/",\
+    "internetEndpoints": null,\
+    "microsoftEndpoints": null,\
+    "queue": "https://tfstate20797.queue.core.windows.net/",\
+    "table": "https://tfstate20797.table.core.windows.net/",\
+    "web": "https://tfstate20797.z13.web.core.windows.net/"\
+  \},\
+  "primaryLocation": "eastus",\
+  "privateEndpointConnections": [],\
+  "provisioningState": "Succeeded",\
+  "publicNetworkAccess": null,\
+  "resourceGroup": "tfstate",\
+  "routingPreference": null,\
+  "sasPolicy": null,\
+  "secondaryEndpoints": null,\
+  "secondaryLocation": null,\
+  "sku": \{\
+    "name": "Standard_LRS",\
+    "tier": "Standard"\
+  \},\
+  "statusOfPrimary": "available",\
+  "statusOfSecondary": null,\
+  "storageAccountSkuConversionStatus": null,\
+  "tags": \{\},\
+  "type": "Microsoft.Storage/storageAccounts"\
+\}\
+\
+There are no credentials provided in your command and environment, we will query for account key for your storage account.\
+It is recommended to provide --connection-string, --account-key or --sas-token in your command as credentials.\
+\
+You also can add `--auth-mode login` in your command to use Azure Active Directory (Azure AD) for authorization if your login account is assigned required RBAC roles.\
+For more information about RBAC roles in storage, visit https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-cli.\
+\
+In addition, setting the corresponding environment variables can avoid inputting credentials in your command. Please use --help to get more information about environment variable usage.\
+\{\
+  "created": true\
+\}\
+harshareddy@Harshas-MacBook-Air azure-labs % ls -al\
+total 32\
+drwxr-xr-x   7 harshareddy  staff   224 Feb 17 10:56 .\
+drwx------@ 17 harshareddy  staff   544 Feb 17 10:56 ..\
+drwxr-xr-x   3 harshareddy  staff    96 Feb 17 10:44 .terraform\
+-rw-r--r--   1 harshareddy  staff  1110 Feb 17 10:43 .terraform.lock.hcl\
+-rw-r--r--   1 root         staff   461 Feb 17 10:56 create-storage.sh\
+-rw-r--r--   1 harshareddy  staff   270 Feb 17 10:42 main.tf\
+-rw-r--r--   1 harshareddy  staff   957 Feb 17 10:51 terraform.tfstate\
+harshareddy@Harshas-MacBook-Air azure-labs % vi backend.tf\
+harshareddy@Harshas-MacBook-Air azure-labs % cat backedn.tf\
+cat: backedn.tf: No such file or directory\
+harshareddy@Harshas-MacBook-Air azure-labs % ls -al \
+total 40\
+drwxr-xr-x   8 harshareddy  staff   256 Feb 17 11:05 .\
+drwx------@ 17 harshareddy  staff   544 Feb 17 11:05 ..\
+drwxr-xr-x   3 harshareddy  staff    96 Feb 17 10:44 .terraform\
+-rw-r--r--   1 harshareddy  staff  1110 Feb 17 10:43 .terraform.lock.hcl\
+-rw-r--r--   1 harshareddy  staff   223 Feb 17 11:05 backend.tf\
+-rw-r--r--   1 root         staff   461 Feb 17 10:56 create-storage.sh\
+-rw-r--r--   1 harshareddy  staff   270 Feb 17 10:42 main.tf\
+-rw-r--r--   1 harshareddy  staff   957 Feb 17 10:51 terraform.tfstate\
+harshareddy@Harshas-MacBook-Air azure-labs % cat backend.tf\
+terraform \{\
+    backend "azurerm" \{\
+        resource_group_name  = "tfstate"\
+        storage_account_name = "tfstate20797"\
+        container_name       = "tfstate"\
+        key                  = "terraform.tfstate"\
+    \}\
+\}\
+harshareddy@Harshas-MacBook-Air azure-labs % terraform init --reconfigure \
+\
+
+\f1\b Initializing the backend...
+\f0\b0 \
+
+\f1\b Do you want to copy existing state to the new backend?
+\f0\b0 \
+  Pre-existing state was found while migrating the previous "local" backend to the\
+  newly configured "azurerm" backend. No existing state was found in the newly\
+  configured "azurerm" backend. Do you want to copy this state to the new "azurerm"\
+  backend? Enter "yes" to copy and "no" to start with an empty state.\
+\
+  
+\f1\b Enter a value:
+\f0\b0  yes\
+\
+\
+Successfully configured the backend "azurerm"! Terraform will automatically\
+use this backend unless the backend configuration changes.\
+\
+
+\f1\b Initializing provider plugins...
+\f0\b0 \
+- Reusing previous version of hashicorp/azurerm from the dependency lock file\
+- Using previously-installed hashicorp/azurerm v2.63.0\
+\
+
+\f1\b Terraform has been successfully initialized!
+\f0\b0 \
+\
+You may now begin working with Terraform. Try running "terraform plan" to see\
+any changes that are required for your infrastructure. All Terraform commands\
+should now work.\
+\
+If you ever set or change modules or backend configuration for Terraform,\
+rerun this command to reinitialize your working directory. If you forget, other\
+commands will detect it and remind you to do so if necessary.\
+harshareddy@Harshas-MacBook-Air azure-labs % ls -al\
+total 40\
+drwxr-xr-x   9 harshareddy  staff   288 Feb 17 11:07 .\
+drwx------@ 17 harshareddy  staff   544 Feb 17 11:07 ..\
+drwxr-xr-x   4 harshareddy  staff   128 Feb 17 11:07 .terraform\
+-rw-r--r--   1 harshareddy  staff  1110 Feb 17 10:43 .terraform.lock.hcl\
+-rw-r--r--   1 harshareddy  staff   223 Feb 17 11:05 backend.tf\
+-rw-r--r--   1 root         staff   461 Feb 17 10:56 create-storage.sh\
+-rw-r--r--   1 harshareddy  staff   270 Feb 17 10:42 main.tf\
+-rw-r--r--   1 harshareddy  staff     0 Feb 17 11:07 terraform.tfstate\
+-rw-r--r--   1 harshareddy  staff   957 Feb 17 11:07 terraform.tfstate.backup\
+harshareddy@Harshas-MacBook-Air azure-labs % vi main.tf\
+harshareddy@Harshas-MacBook-Air azure-labs % cat main.tf\
+terraform \{\
+  required_providers \{\
+    azurerm = \{\
+      source  = "hashicorp/azurerm"\
+      version = "=2.63.0"\
+    \}\
+  \}\
+\}\
+\
+provider "azurerm" \{\
+  features \{\}\
+\}\
+\
+resource "azurerm_resource_group" "demo-rg" \{\
+  name     = "demo-resource-group"\
+  location = "eastus"\
+\}\
+\
+resource "azurerm_container_registry" "acr" \{\
+  name                = "myacr56312312"\
+  resource_group_name = azurerm_resource_group.demo-rg.name\
+  location            = azurerm_resource_group.demo-rg.location\
+  sku                 = "Standard"\
+  admin_enabled       = false\
+\}\
+harshareddy@Harshas-MacBook-Air azure-labs % terraform plan              \
+
+\f1\b azurerm_resource_group.demo-rg: Refreshing state... [id=/subscriptions/xxxxxx/resourceGroups/demo-resource-group]
+\f0\b0 \
+\
+Terraform used the selected providers to generate the following execution plan. Resource\
+actions are indicated with the following symbols:\
+  + create\
+\
+Terraform will perform the following actions:\
+\
+
+\f1\b   # azurerm_container_registry.acr
+\f0\b0  will be created\
+  + resource "azurerm_container_registry" "acr" \{\
+      + admin_enabled                 = false\
+      + admin_password                = (sensitive value)\
+      + admin_username                = (known after apply)\
+      + encryption                    = (known after apply)\
+      + georeplication_locations      = (known after apply)\
+      + georeplications               = (known after apply)\
+      + id                            = (known after apply)\
+      + location                      = "eastus"\
+      + login_server                  = (known after apply)\
+      + name                          = "myacr56312312"\
+      + network_rule_set              = (known after apply)\
+      + public_network_access_enabled = true\
+      + resource_group_name           = "demo-resource-group"\
+      + retention_policy              = (known after apply)\
+      + sku                           = "Standard"\
+      + trust_policy                  = (known after apply)\
+    \}\
+\
+
+\f1\b Plan:
+\f0\b0  1 to add, 0 to change, 0 to destroy.\
+\
+\uc0\u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \
+\
+Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to\
+take exactly these actions if you run "terraform apply" now.\
+harshareddy@Harshas-MacBook-Air azure-labs % terraform apply --auto-approve\
+
+\f1\b azurerm_resource_group.demo-rg: Refreshing state... [id=/subscriptions/xxxx/resourceGroups/demo-resource-group]
+\f0\b0 \
+\
+Terraform used the selected providers to generate the following execution plan. Resource\
+actions are indicated with the following symbols:\
+  + create\
+\
+Terraform will perform the following actions:\
+\
+
+\f1\b   # azurerm_container_registry.acr
+\f0\b0  will be created\
+  + resource "azurerm_container_registry" "acr" \{\
+      + admin_enabled                 = false\
+      + admin_password                = (sensitive value)\
+      + admin_username                = (known after apply)\
+      + encryption                    = (known after apply)\
+      + georeplication_locations      = (known after apply)\
+      + georeplications               = (known after apply)\
+      + id                            = (known after apply)\
+      + location                      = "eastus"\
+      + login_server                  = (known after apply)\
+      + name                          = "myacr56312312"\
+      + network_rule_set              = (known after apply)\
+      + public_network_access_enabled = true\
+      + resource_group_name           = "demo-resource-group"\
+      + retention_policy              = (known after apply)\
+      + sku                           = "Standard"\
+      + trust_policy                  = (known after apply)\
+    \}\
+\
+
+\f1\b Plan:
+\f0\b0  1 to add, 0 to change, 0 to destroy.\
+
+\f1\b azurerm_container_registry.acr: Creating...
+\f0\b0 \
+
+\f1\b azurerm_container_registry.acr: Creation complete after 9s [id=/subscriptions/xxxxxxx/resourceGroups/demo-resource-group/providers/Microsoft.ContainerRegistry/registries/myacr56312312]
+\f0\b0 \
+\
+
+\f1\b Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+\f0\b0 \
+harshareddy@Harshas-MacBook-Air azure-labs %\
+}
